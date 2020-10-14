@@ -46,7 +46,7 @@ function getFinals(array) {
 
 };
 
-console.log(getFinals(fifaData), 'Task 2');
+console.log(getFinals(fifaData));
 
 /* Task 3: Implement a higher-order function called `getYears` that accepts the callback function `getFinals`, and returns an array called `years` containing all of the years in the dataset */
 
@@ -67,7 +67,7 @@ console.log('****** TASK 4 ******');
 
 function getWinners(callback, array) {
 
-    let winner = callback(array).filter( object => object['Home Team Goals'] > object['Away Team Goals'] || object['Away Team Goals'] > object['Home Team Goals'])
+    let winner = callback(array).filter( object => object['Home Team Goals'] > object['Away Team Goals'] || object['Home Team Goals'] < object['Away Team Goals'])
     
     // let winner = callback(array).filter( function(object){  
     // object['Home Team Goals'] > object['Away Team Goals'] || object['Away Team Goals'] > object['Home Team Goals']
@@ -95,10 +95,10 @@ function getWinnersByYear(callback1, callback2, callback3, array) {
 
 
 
-    let Winners = callback1(callback3, array)
+    let Winners = callback1( callback3, array)
     // console.log(Winners);
 
-    let Years = callback2( getFinals, array)
+    let Years = callback2( callback3, array)
     // console.log(Years);
 
     // let stringArray = {
@@ -131,13 +131,23 @@ console.log( getWinnersByYear(getWinners, getYears, getFinals, fifaData) );
 
 /* Task 6: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
-function getAverageGoals(/* code here */) {
+console.log('****** TASK 6 ******');
 
-    /* code here */
+function getAverageGoals( array, data ) {
+
+    home 
+
+    let homeAverage = 0;
+
+    let awayAverage = 0;
+
+    const average = array.reduce( (accumulator, currentValue) => {
+        return accumulator + currentValue / array
+    },0);
 
 };
 
-getAverageGoals();
+getAverageGoals( fifaData);
 
 
 
